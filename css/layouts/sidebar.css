@@ -239,3 +239,16 @@
 .wrapper.sidebar-expanded .profile-info {
     opacity: 1;
 }
+
+.nav-item#logoutButton .nav-link {
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.15);
+}
+
+.nav-item#logoutButton .nav-link:hover {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.nav-item#logoutButton .nav-link i {
+    color: var(--accent-color);
+}

@@ -90,3 +90,58 @@ function initSidebar() {
 
 // Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', initSidebar);
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Obtener botón de salir
+    const logoutBtn = document.getElementById('logout-btn');
+    
+    // Manejar clic en botón de salir
+    if (logoutBtn) {
+        logoutBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            
+            // Eliminar sesión actual
+            sessionStorage.removeItem('currentUser');
+            
+            // Redirigir a index.html
+            window.location.href = 'index.html';
+        });
+    }
+    
+    // Actualizar información de perfil con datos reales
+    const currentUser = JSON.parse(sessionStorage.getItem('currentUser'));
+    if (currentUser) {
+        const profileName = document.querySelector('.profile-name');
+        const profileImg = document.querySelector('.profile-img');
+        
+        if (profileName) {
+            profileName.textContent = currentUser.name + ' ' + currentUser.last_name;
+        }
+        
+        if (profileImg) {
+            // Generar avatar dinámico con las iniciales
+            const initials = currentUser.name.charAt(0) + currentUser.last_name.charAt(0);
+            profileImg.src = `https://ui-avatars.com/api/?name=${initials}&background=8f141b&color=fff`;
+        }
+    }
+});
+
+// Manejo del botón de salir
+document.getElementById('logoutButton').addEventListener('click', function(e) {
+    e.preventDefault();
+    showLoadingOverlay();
+    
+    // Simular proceso de logout
+    setTimeout(() => {
+        window.location.href = '../index.html';
+    }, 1000);
+});
+
+// Funciones para mostrar/ocultar overlay
+function showLoadingOverlay() {
+    document.getElementById('loadingOverlay').classList.remove('d-none');
+}
+
+function hideLoadingOverlay() {
+    document.getElementById('loadingOverlay').classList.add('d-none');
+}
