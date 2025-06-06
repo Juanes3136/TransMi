@@ -1,0 +1,195 @@
+/* Estilos para modales */
+.modal-content {
+    border-radius: 15px;
+    overflow: hidden;
+    border: none;
+}
+
+.modal-header {
+    background: linear-gradient(to right, #c41d14, #ff342a);
+    color: white;
+    border-bottom: none;
+    padding: 20px 25px;
+}
+
+.modal-title {
+    font-weight: 700;
+}
+
+.modal-body {
+    padding: 25px;
+}
+
+.payment-options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.payment-method {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.payment-method.active {
+    border-color: #c41d14;
+    background: rgba(196, 29, 20, 0.05);
+}
+
+.payment-method i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    display: block;
+    color: #c41d14;
+}
+
+.qr-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.qr-code {
+    width: 200px;
+    height: 200px;
+    background: #f8f9fa;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed #ddd;
+}
+
+.qr-code i {
+    font-size: 4rem;
+    color: #c41d14;
+}
+
+.beneficiario-card {
+    background: white;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    display: flex;
+    align-items: center;
+}
+
+.beneficiario-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: rgba(196, 29, 20, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.beneficiario-avatar i {
+    color: #c41d14;
+    font-size: 1.5rem;
+}
+
+.block-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.block-icon {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: rgba(196, 29, 20, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+}
+
+.block-icon i {
+    color: #c41d14;
+    font-size: 2rem;
+}
+
+.recompensa-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.recompensa-item i {
+    font-size: 2rem;
+    margin-right: 15px;
+    color: #ffd700;
+}
+
+/* ... otros estilos ... */
+
+/* Estilos para el código QR */
+.qr-placeholder {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Estilos para el select de bancos */
+#bancoSelect {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23c41d14' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M2 5l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+}
+
+/* Estilos para los métodos de pago activos */
+.payment-method.active {
+    border-color: #c41d14;
+    background: rgba(196, 29, 20, 0.05);
+    position: relative;
+}
+
+.payment-method.active::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #c41d14;
+}
+
+/* Mejorar visibilidad de formularios */
+.payment-form {
+    background: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 15px;
+    border: 1px solid #e9ecef;
+}
+
+/* Referencia QR */
+#qrReference {
+    font-family: monospace;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+    color: #c41d14;
+}

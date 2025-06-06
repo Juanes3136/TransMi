@@ -1,0 +1,114 @@
+<div class="page-header">
+    <h1>Configuración del Sistema</h1>
+</div>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active">General</a>
+            <a href="#" class="list-group-item list-group-item-action">Seguridad</a>
+            <a href="#" class="list-group-item list-group-item-action">Notificaciones</a>
+            <a href="#" class="list-group-item list-group-item-action">Integraciones</a>
+            <a href="#" class="list-group-item list-group-item-action">Personalización</a>
+            <a href="#" class="list-group-item list-group-item-action">Copia de Seguridad</a>
+        </div>
+    </div>
+    
+    <div class="col-md-9">
+        <div class="form-container">
+            <h3 class="form-title">Configuración General</h3>
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Nombre del Sistema</label>
+                    <input type="text" class="form-control" value="Transmi+">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Zona Horaria</label>
+                    <select class="form-select">
+                        <option>Bogotá, Colombia (GMT-5)</option>
+                        <option>Lima, Perú (GMT-5)</option>
+                        <option>Ciudad de México (GMT-6)</option>
+                        <option>Buenos Aires, Argentina (GMT-3)</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Formato de Fecha</label>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <select class="form-select mb-2">
+                                <option>DD/MM/AAAA</option>
+                                <option>MM/DD/AAAA</option>
+                                <option>AAAA-MM-DD</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <select class="form-select">
+                                <option>24 horas</option>
+                                <option>12 horas</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Idioma</label>
+                    <select class="form-select">
+                        <option>Español</option>
+                        <option>Inglés</option>
+                        <option>Portugués</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Tema de Interfaz</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="theme" id="light" checked>
+                        <label class="form-check-label" for="light">Claro</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="theme" id="dark">
+                        <label class="form-check-label" for="dark">Oscuro</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="theme" id="system">
+                        <label class="form-check-label" for="system">Usar configuración del sistema</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+            </form>
+        </div>
+        
+        <div class="form-container mt-4">
+            <h3 class="form-title">Configuración de Seguridad</h3>
+            <form>
+                <div class="mb-3">
+                    <label class="form-label">Autenticación de Dos Factores</label>
+                    <div class="form-check form-switch">
+                        <input class="form-check-input" type="checkbox" id="twoFactor" checked>
+                        <label class="form-check-label" for="twoFactor">Habilitar autenticación en dos pasos</label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Contraseña Maestra</label>
+                    <input type="password" class="form-control" placeholder="Ingrese su contraseña actual">
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Nueva Contraseña</label>
+                        <input type="password" class="form-control" placeholder="Nueva contraseña">
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Confirmar Contraseña</label>
+                        <input type="password" class="form-control" placeholder="Confirmar nueva contraseña">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Historial de Sesiones</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="sessionHistory" checked>
+                        <label class="form-check-label" for="sessionHistory">Guardar historial de sesiones</label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Actualizar Seguridad</button>
+            </form>
+        </div>
+    </div>
+</div>

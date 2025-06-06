@@ -1,0 +1,362 @@
+@import url('layouts/head.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    font-family: 'Poppins', sans-serif;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    height: 650px;
+    background: #fff;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+}
+
+.form-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+    width: 50%;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    z-index: 2;
+}
+
+.sign-in-container {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.sign-up-container {
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 0.6s ease-in-out;
+    z-index: 100;
+}
+
+.overlay {
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    background: linear-gradient(to right, #ff342a, #c41d14);
+    transition: transform 0.6s ease-in-out;
+}
+
+.overlay-panel {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 50%;
+    height: 100%;
+    padding: 0 40px;
+    transform: translateX(0);
+    transition: transform 0.6s ease-in-out;
+    color: #fff;
+}
+
+.overlay-left {
+    transform: translateX(-20%);
+}
+
+.overlay-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.right-panel-active .sign-in-container {
+    transform: translateX(100%);
+}
+
+.container.right-panel-active .sign-up-container {
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+}
+
+.container.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
+
+.container.right-panel-active .overlay {
+    transform: translateX(50%);
+}
+
+.container.right-panel-active .overlay-left {
+    transform: translateX(0);
+}
+
+.container.right-panel-active .overlay-right {
+    transform: translateX(20%);
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+h2 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    max-width: 300px;
+}
+
+form {
+    width: 100%;
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    border: none;
+    border-bottom: 2px solid #ddd;
+    background: transparent;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+input:focus {
+    outline: none;
+    border-bottom-color: #c41d14;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+.input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    transition: all 0.3s;
+}
+
+input:focus + .input-icon {
+    color: #c41d14;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.password-toggle:hover {
+    color: #c41d14;
+}
+
+button {
+    padding: 15px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(to right, #c41d14, #ff342a);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px #ff342a;
+}
+
+button:active {
+    transform: translateY(-1px);
+}
+
+.ghost {
+    background: transparent;
+    border: 2px solid #fff;
+    margin-top: 20px;
+    box-shadow: none;
+}
+
+.ghost:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-3px);
+}
+
+a {
+    text-decoration: none;
+    color: #ff342a;
+    font-weight: 500;
+    transition: all 0.3s;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+a:hover {
+    color: #c41d14;
+    transform: translateY(-2px);
+}
+
+.social-container {
+    margin: 30px 0;
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f5f5;
+    color: #333;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.social-icon:hover {
+    background: #c41d14;
+    color: #fff;
+    transform: translateY(-3px);
+}
+
+.error-message {
+    color: #fff;
+    font-size: 14px;
+    margin-top: 5px;
+    text-align: left;
+    display: none;
+}
+
+.terms {
+    font-size: 12px;
+    color: #777;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.terms a {
+    font-size: 12px;
+    margin-top: 0;
+}
+
+.logo {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    font-size: 24px;
+    font-weight: 700;
+    color: #ff342a;
+    z-index: 10;
+}
+
+/* Responsive design */
+@media (max-width: 900px) {
+    .container {
+        height: auto;
+        min-height: 650px;
+        flex-direction: column;
+    }
+    
+    .form-container,
+    .overlay-container {
+        position: relative;
+        width: 100%;
+        height: auto;
+        left: 0;
+    }
+    
+    .overlay-container {
+        height: 200px;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        transform: none !important;
+    }
+    
+    .overlay {
+        left: 0 !important;
+        width: 100% !important;
+        height: 200px !important;
+        top: auto !important;
+        bottom: 0 !important;
+        transform: none !important;
+    }
+    
+    .overlay-panel {
+        width: 100%;
+        padding: 20px;
+        transform: none !important;
+    }
+    
+    .container.right-panel-active .sign-in-container,
+    .container.right-panel-active .sign-up-container {
+        transform: translateY(-100%) !important;
+    }
+    
+    .container.right-panel-active .overlay-container {
+        transform: translateY(0) !important;
+    }
+    
+    .logo {
+        top: 20px;
+        left: 20px;
+    }
+}

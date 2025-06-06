@@ -1,0 +1,149 @@
+<div class="modal fade" id="inscripcionModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Completa tu información para obtener la tarjeta</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="inscripcionForm">
+                    <div class="form-section">
+                        <h6 class="section-title">Información Personal</h6>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="nombreCompleto" class="form-label">Nombre completo</label>
+                                <input type="text" class="form-control" id="nombreCompleto" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="tipoDocumento" class="form-label">Tipo de documento</label>
+                                <select class="form-select" id="tipoDocumento" required>
+                                    <option value="">Seleccionar</option>
+                                    <option value="cc">Cédula de Ciudadanía</option>
+                                    <option value="ti">Tarjeta de Identidad</option>
+                                    <option value="pasaporte">Pasaporte</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="numeroDocumento" class="form-label">Número de documento</label>
+                                <input type="number" class="form-control" id="numeroDocumento" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="fechaNacimiento" class="form-label">Fecha de nacimiento</label>
+                                <input type="date" class="form-control" id="fechaNacimiento" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Género</label>
+                                <div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="genero" id="masculino" value="masculino" required>
+                                        <label class="form-check-label" for="masculino">Masculino</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="genero" id="femenino" value="femenino">
+                                        <label class="form-check-label" for="femenino">Femenino</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="genero" id="noBinario" value="no binario">
+                                        <label class="form-check-label" for="noBinario">No binario</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="genero" id="prefieroNoDecirlo" value="prefiero no decirlo">
+                                        <label class="form-check-label" for="prefieroNoDecirlo">Prefiero no decirlo</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h6 class="section-title">Datos de Contacto</h6>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="celular" class="form-label">Número de celular</label>
+                                <input type="tel" class="form-control" id="celular" required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label">Correo electrónico</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-12">
+                                <label for="direccion" class="form-label">Dirección de residencia (opcional)</label>
+                                <input type="text" class="form-control" id="direccion">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <h6 class="section-title">Información para Subsidios y Beneficios</h6>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="sisben" class="form-label">¿Perteneces al SISBÉN?</label>
+                                <select class="form-select" id="sisben" required>
+                                    <option value="">Seleccionar</option>
+                                    <option value="si">Sí</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6" id="sisbenLevelContainer" style="display: none;">
+                                <label for="sisbenLevel" class="form-label">Nivel SISBÉN</label>
+                                <select class="form-select" id="sisbenLevel">
+                                    <option value="">Seleccionar</option>
+                                    <option value="A">A</option>
+                                    <option value="B">B</option>
+                                    <option value="C">C</option>
+                                    <option value="D">D</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label for="estudiante" class="form-label">¿Eres estudiante actualmente?</label>
+                                <select class="form-select" id="estudiante" required>
+                                    <option value="">Seleccionar</option>
+                                    <option value="si">Sí</option>
+                                    <option value="no">No</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6" id="institucionContainer" style="display: none;">
+                                <label for="institucion" class="form-label">Nombre de la institución educativa</label>
+                                <input type="text" class="form-control" id="institucion">
+                            </div>
+                        </div>
+                        <div class="row mb-3" id="tipoInstitucionContainer" style="display: none;">
+                            <div class="col-md-6">
+                                <label for="tipoInstitucion" class="form-label">Tipo de institución</label>
+                                <select class="form-select" id="tipoInstitucion">
+                                    <option value="">Seleccionar</option>
+                                    <option value="publica">Pública</option>
+                                    <option value="privada">Privada</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-section">
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="tratamientoDatos" required>
+                            <label class="form-check-label" for="tratamientoDatos">Autorizo el tratamiento de mis datos personales conforme a la Ley 1581 de 2012.</label>
+                        </div>
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="terminosCondiciones" required>
+                            <label class="form-check-label" for="terminosCondiciones">Acepto los términos y condiciones de uso de la aplicación TransMi+.</label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="submitInscripcion()">Aceptar</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,225 @@
+<link rel="stylesheet" href="../css/start.css">
+
+<div class="start-container">
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">Trans<span>mi+</span></div>
+        <div class="slogan">MUCHO MÁS QUE UN VIAJE</div>
+    </div>
+
+    <!-- User Info -->
+    <div class="user-info">
+        <div class="info-card">
+            <div class="info-title">NOMBRE</div>
+            <div class="info-value">Juan Esteban Pérez</div>
+        </div>
+        
+        <div class="info-card">
+            <div class="info-title">NIVEL SISBEN</div>
+            <div class="info-value">A <span class="sisben-level">Prioritario</span></div>
+        </div>
+        
+        <div class="info-card">
+            <div class="info-title">SALDO</div>
+            <div class="info-value saldo-value">$17.000</div>
+        </div>
+    </div>
+
+    <!-- Travel History -->
+    <div class="travel-history">
+        <div class="section-title">
+            <span>HISTORIAL DE VIAJES</span>
+            <button class="btn-view">Ver completo</button>
+        </div>
+        
+        <table class="history-table">
+            <thead>
+                <tr>
+                    <th>RUTA</th>
+                    <th>FECHA</th>
+                    <th>VALOR</th>
+                    <th>ESTADO</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <div class="route-info">
+                            <div class="route-icon">
+                                <i class="fas fa-bus"></i>
+                            </div>
+                            <div>
+                                <div class="route-name">Calle 26</div>
+                                <div class="route-details">Portal El Dorado - Centro</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>15 Nov 2023<br>08:45 AM</td>
+                    <td class="amount">$2.500</td>
+                    <td><span class="status-badge status-completed">Completado</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="route-info">
+                            <div class="route-icon">
+                                <i class="fas fa-subway"></i>
+                            </div>
+                            <div>
+                                <div class="route-name">Caracas</div>
+                                <div class="route-details">Portal Sur - Calle 76</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>14 Nov 2023<br>06:30 PM</td>
+                    <td class="amount">$2.500</td>
+                    <td><span class="status-badge status-completed">Completado</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="route-info">
+                            <div class="route-icon">
+                                <i class="fas fa-bus"></i>
+                            </div>
+                            <div>
+                                <div class="route-name">Autonorte</div>
+                                <div class="route-details">Portal Norte - Centro</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>14 Nov 2023<br>07:15 AM</td>
+                    <td class="amount">$2.500</td>
+                    <td><span class="status-badge status-completed">Completado</span></td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="route-info">
+                            <div class="route-icon">
+                                <i class="fas fa-subway"></i>
+                            </div>
+                            <div>
+                                <div class="route-name">NQS</div>
+                                <div class="route-details">Portal 80 - Estación Central</div>
+                            </div>
+                        </div>
+                    </td>
+                    <td>13 Nov 2023<br>05:20 PM</td>
+                    <td class="amount">$2.500</td>
+                    <td><span class="status-badge status-completed">Completado</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <!-- Services -->
+    <div>
+        <div class="section-title">SERVICIOS</div>
+        
+        <div class="services-grid">
+            <div class="service-card" onclick="openService('recarga')">
+                <div class="service-icon">
+                    <i class="fas fa-credit-card"></i>
+                </div>
+                <div class="service-title">RECARGA</div>
+                <div class="service-description">Recarga tu tarjeta de forma rápida y segura</div>
+            </div>
+            
+            <div class="service-card" onclick="openService('beneficiarios')">
+                <div class="service-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="service-title">BENEFICIARIOS</div>
+                <div class="service-description">Administra tus beneficiarios y sus viajes</div>
+            </div>
+            
+            <div class="service-card" onclick="openService('bloqueo')">
+                <div class="service-icon">
+                    <i class="fas fa-lock"></i>
+                </div>
+                <div class="service-title">BLOQUEO</div>
+                <div class="service-description">Bloquea tu tarjeta en caso de pérdida o robo</div>
+            </div>
+            
+            <div class="service-card" onclick="openService('fidelizacion')">
+                <div class="service-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <div class="service-title">FIDELIZACIÓN</div>
+                <div class="service-description">Acumula puntos y obtén grandes beneficios</div>
+            </div>
+        </div>
+
+         <!-- Horas pico -->
+        <div class="peak-hours">
+            <div class="section-title">HORAS PICO</div>
+            <div class="hours-info">
+                <div class="hours-card">
+                    <div class="hours-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <div class="hours-details">
+                        <div class="hours-title">MAÑANA</div>
+                        <div class="hours-time">6:00 AM - 9:00 AM</div>
+                    </div>
+                </div>
+                <div class="hours-card">
+                    <div class="hours-icon">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <div class="hours-details">
+                        <div class="hours-title">MEDIO DÍA</div>
+                        <div class="hours-time">12:00 PM - 2:00 PM</div>
+                    </div>
+                </div>
+                <div class="hours-card">
+                    <div class="hours-icon">
+                        <i class="fas fa-moon"></i>
+                    </div>
+                    <div class="hours-details">
+                        <div class="hours-title">TARDE-NOCHE</div>
+                        <div class="hours-time">5:00 PM - 8:00 PM</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Fidelización Card -->
+        <div class="fidelizacion-card">
+            <div class="fidelizacion-title">PROGRAMA DE FIDELIDAD</div>
+            <div class="points-info">Tus puntos acumulados</div>
+            <div class="points-display">1,250 pts</div>
+            
+            <div class="progress-labels">
+                <span>Bronce</span>
+                <span>Oro (2,000 pts)</span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar"></div>
+            </div>
+            
+            <div class="recompensa">
+                <i class="fas fa-ticket-alt"></i>
+                <div class="recompensa-text">
+                    <div>Próxima recompensa</div>
+                    <div style="font-weight: 600;">Viaje gratis al acumular 2,000 puntos</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botón de novedades flotante -->
+    <div class="news-button" onclick="openNews('inscripcion')">
+        <i class="fas fa-bell"></i>
+        <span class="notification-badge">3</span>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div>Transmi+ - Sistema Integrado de Transporte de Bogotá</div>
+        <div class="footer-links">
+            <a href="#" class="footer-link">Términos y Condiciones</a>
+            <a href="#" class="footer-link">Soporte</a>
+            <a href="#" class="footer-link">Preguntas Frecuentes</a>
+        </div>
+        <div style="margin-top: 15px;">© 2023 Transmi+. Todos los derechos reservados.</div>
+    </div>
+</div>

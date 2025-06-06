@@ -1,0 +1,118 @@
+<!-- Modal Recarga -->
+<div class="modal fade" id="recargaModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">RECARGAR TARJETA</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-4">
+                    <label class="form-label">Monto a recargar</label>
+                    <input type="number" class="form-control form-control-lg" placeholder="Ingresa el monto" id="recargaAmount">
+                </div>
+                
+                <div class="mb-4">
+                    <label class="form-label">Método de pago</label>
+                    <div class="payment-options">
+                        <div class="payment-method active" data-payment="tarjeta">
+                            <i class="fas fa-credit-card"></i>
+                            <div>Tarjeta</div>
+                        </div>
+                        <div class="payment-method" data-payment="pse">
+                            <i class="fas fa-university"></i>
+                            <div>PSE</div>
+                        </div>
+                        <div class="payment-method" data-payment="qr">
+                            <i class="fas fa-qrcode"></i>
+                            <div>QR</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Formulario Tarjeta (visible por defecto) -->
+                    <div class="payment-form" id="tarjetaForm">
+                        <div class="row mb-3">
+                            <div class="col-md-6">
+                                <label class="form-label">Número de tarjeta</label>
+                                <input type="text" class="form-control" placeholder="1234 5678 9012 3456">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">Expiración</label>
+                                <input type="text" class="form-control" placeholder="MM/AA">
+                            </div>
+                            <div class="col-md-3">
+                                <label class="form-label">CVV</label>
+                                <input type="text" class="form-control" placeholder="123">
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Nombre del titular</label>
+                            <input type="text" class="form-control" placeholder="Como aparece en la tarjeta">
+                        </div>
+                    </div>
+                    
+                    <!-- Formulario PSE (oculto inicialmente) -->
+                    <div class="payment-form d-none" id="pseForm">
+                        <div class="mb-3">
+                            <label class="form-label">Seleccionar banco</label>
+                            <select class="form-select" id="bancoSelect">
+                                <option value="">Selecciona tu banco</option>
+                                <option>Bancolombia</option>
+                                <option>Davivienda</option>
+                                <option>Banco de Bogotá</option>
+                                <option>BBVA</option>
+                                <option>Banco Popular</option>
+                                <option>Banco de Occidente</option>
+                                <option>Scotiabank Colpatria</option>
+                                <option>Banco Caja Social</option>
+                                <option>Banco AV Villas</option>
+                                <option>Citibank</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Tipo de cuenta</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="tipoCuenta" id="ahorros" checked>
+                                    <label class="form-check-label" for="ahorros">Ahorros</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="tipoCuenta" id="corriente">
+                                    <label class="form-check-label" for="corriente">Corriente</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" placeholder="tucorreo@ejemplo.com">
+                        </div>
+                    </div>
+                    
+                    <!-- Formulario QR (oculto inicialmente) -->
+                    <div class="payment-form d-none" id="qrForm">
+                        <div class="qr-container">
+                            <div class="qr-code">
+                                <div id="qrCodeDisplay"></div>
+                            </div>
+                            <p>Escanea este código QR con tu app bancaria para completar el pago</p>
+                            <div class="mt-3">
+                                <div class="alert alert-info">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    También puedes hacer la transferencia manualmente a:<br>
+                                    <strong>Banco: Bancolombia</strong><br>
+                                    <strong>Cuenta: 123-456789-00</strong><br>
+                                    <strong>A nombre de: Transmi+ S.A.S.</strong><br>
+                                    <strong>Referencia: <span id="qrReference"></span></strong>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="d-grid">
+                    <button class="btn btn-primary btn-lg" id="confirmRecarga">Realizar recarga</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

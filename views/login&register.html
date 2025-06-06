@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login&Register</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link type='text/css' href='../css/login&register.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div id="head-container"></div>
+
+    <div class="container" id="container">
+        <div class="logo">Trans<span style="color: #c41d14;">mi+</span></div>
+        
+        <!-- Sign Up Form -->
+        <div class="form-container sign-up-container">
+            <form id="registerForm">
+                <h1>Create Account</h1>
+                
+                <div class="social-container">
+                    <div class="social-icon"><i class="fab fa-google"></i></div>
+                    <div class="social-icon"><i class="fab fa-facebook-f"></i></div>
+                    <div class="social-icon"><i class="fab fa-linkedin-in"></i></div>
+                </div>
+                
+                <span>o utiliza una cuenta para registrarte</span>
+                
+                <div class="input-group">
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" name="name" placeholder="Nombres" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-user input-icon"></i>
+                    <input type="text" name="last_name" placeholder="Apellidos" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" name="email" placeholder="Correo" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-phone input-icon"></i>
+                    <input type="tel" name="phone_number" placeholder="Telefono">
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="reg-password" name="password" placeholder="Contraseña" required>
+                    <i class="fas fa-eye password-toggle" id="reg-toggle"></i>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="reg-confirm-password" name="confirm_password" placeholder="Confirmar Contraseña" required>
+                    <i class="fas fa-eye password-toggle" id="reg-confirm-toggle"></i>
+                </div>
+                
+                <button type="submit">Registrar</button>
+                
+                <p class="terms">
+                    By signing up, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>
+                </p>
+            </form>
+        </div>
+        
+        <!-- Sign In Form -->
+        <div class="form-container sign-in-container">
+            <form id="loginForm">
+                <h1>Iniciar sesión</h1>
+                
+                <div class="social-container">
+                    <div class="social-icon"><i class="fab fa-google"></i></div>
+                    <div class="social-icon"><i class="fab fa-facebook-f"></i></div>
+                    <div class="social-icon"><i class="fab fa-linkedin-in"></i></div>
+                </div>
+                
+                <span>o usa tu cuenta</span>
+                
+                <div class="input-group">
+                    <i class="fas fa-envelope input-icon"></i>
+                    <input type="email" name="email" placeholder="Correo" required>
+                </div>
+                
+                <div class="input-group">
+                    <i class="fas fa-lock input-icon"></i>
+                    <input type="password" id="login-password" name="password" placeholder="Contraseña" required>
+                    <i class="fas fa-eye password-toggle" id="login-toggle"></i>
+                </div>
+                
+                <a href="#">¿Olvidaste tu contraseña?</a>
+                
+                <button type="submit">Iniciar</button>
+                
+                <div id="error-message" class="error-message">
+                    Invalid email or password. Please try again.
+                </div>
+            </form>
+        </div>
+        
+        <!-- Overlay Container -->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h2>Binevenido a Transmi+!</h2>
+                    <p>Para mantenerse conectado con nosotros, inicie sesión con su información personal.</p>
+                    <button class="ghost" id="signIn">Iniciar</button>
+                </div>
+                <div class="overlay-panel overlay-right">
+                    <h2>Hola, a Transmi+!</h2>
+                    <p>Introduce tus datos personales y comienza tu viaje con nosotros</p>
+                    <button class="ghost" id="signUp">Registrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../components/head-login&register-components.js"></script>
+    <script>
+        // Toggle between Sign In and Sign Up
+        const signUpButton = document.getElementById('signUp');
+        const signInButton = document.getElementById('signIn');
+        const container = document.getElementById('container');
+
+        signUpButton.addEventListener('click', () => {
+            container.classList.add('right-panel-active');
+        });
+
+        signInButton.addEventListener('click', () => {
+            container.classList.remove('right-panel-active');
+        });
+
+        // Password toggle functionality
+        function setupPasswordToggle(passwordId, toggleId) {
+            const passwordInput = document.getElementById(passwordId);
+            const toggleIcon = document.getElementById(toggleId);
+            
+            toggleIcon.addEventListener('click', () => {
+                if (passwordInput.type === 'password') {
+                    passwordInput.type = 'text';
+                    toggleIcon.classList.remove('fa-eye');
+                    toggleIcon.classList.add('fa-eye-slash');
+                } else {
+                    passwordInput.type = 'password';
+                    toggleIcon.classList.remove('fa-eye-slash');
+                    toggleIcon.classList.add('fa-eye');
+                }
+            });
+        }
+
+        // Setup password toggles
+        setupPasswordToggle('login-password', 'login-toggle');
+        setupPasswordToggle('reg-password', 'reg-toggle');
+        setupPasswordToggle('reg-confirm-password', 'reg-confirm-toggle');
+
+        // Form validation
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const password = document.getElementById('reg-password').value;
+            const confirmPassword = document.getElementById('reg-confirm-password').value;
+            
+            if (password !== confirmPassword) {
+                alert("Passwords don't match!");
+                return;
+            }
+            
+            // Simulate successful registration
+            alert('Registration successful! You can now sign in.');
+            container.classList.remove('right-panel-active');
+            this.reset();
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate login validation
+            const email = this.elements.email.value;
+            const password = this.elements.password.value;
+            const errorMessage = document.getElementById('error-message');
+            
+            // Simple validation example
+            if (email === 'user@example.com' && password === 'password123') {
+                errorMessage.style.display = 'none';
+                alert('Login successful! Welcome back.');
+                this.reset();
+            } else {
+                errorMessage.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

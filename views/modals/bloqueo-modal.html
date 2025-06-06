@@ -1,0 +1,55 @@
+<!-- Modal Bloqueo -->
+<div class="modal fade" id="bloqueoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">BLOQUEAR TARJETA</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="block-card">
+                    <div class="block-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h5>Protección de tarjeta</h5>
+                    <p class="text-muted">Bloquea tu tarjeta temporalmente si la has perdido o extraviado</p>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="form-label">Seleccionar tarjeta</label>
+                    <select class="form-select">
+                        <option>Tarjeta Principal (***1234)</option>
+                        <option>Tarjeta Secundaria (***5678)</option>
+                    </select>
+                </div>
+                
+                <div class="mb-4">
+                    <label class="form-label">Motivo del bloqueo</label>
+                    <select class="form-select">
+                        <option>Selecciona un motivo</option>
+                        <option>Pérdida o extravío</option>
+                        <option>Robo o hurto</option>
+                        <option>Daño físico</option>
+                        <option>Otra razón</option>
+                    </select>
+                </div>
+                
+                <div class="alert alert-warning">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    Al bloquear tu tarjeta, no podrá ser utilizada para viajes hasta que la desbloquees
+                </div>
+                
+                <div class="form-check mb-4">
+                    <input class="form-check-input" type="checkbox" id="confirmBlock">
+                    <label class="form-check-label" for="confirmBlock">
+                        Confirmo que deseo bloquear esta tarjeta temporalmente
+                    </label>
+                </div>
+                
+                <div class="d-grid">
+                    <button class="btn btn-danger">Confirmar bloqueo</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

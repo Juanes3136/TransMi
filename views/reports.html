@@ -1,0 +1,239 @@
+<div class="page-header">
+    <h1>Reportes y Estadísticas</h1>
+</div>
+
+<ul class="nav nav-tabs mb-4" id="reportsTab" role="tablist">
+    <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="usage-tab" data-bs-toggle="tab" data-bs-target="#usage" type="button" role="tab">Uso del Sistema</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="financial-tab" data-bs-toggle="tab" data-bs-target="#financial" type="button" role="tab">Financieros</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="performance-tab" data-bs-toggle="tab" data-bs-target="#performance" type="button" role="tab">Rendimiento</button>
+    </li>
+    <li class="nav-item" role="presentation">
+        <button class="nav-link" id="custom-tab" data-bs-toggle="tab" data-bs-target="#custom" type="button" role="tab">Personalizados</button>
+    </li>
+</ul>
+
+<div class="tab-content" id="reportsTabContent">
+    <div class="tab-pane fade show active" id="usage" role="tabpanel">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="chart-container">
+                    <div class="chart-header">Afluencia Mensual de Pasajeros</div>
+                    <div id="passengerChart" style="height: 350px;"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="chart-container">
+                    <div class="chart-header">Distribución por Horario</div>
+                    <div id="timeDistribution" style="height: 350px;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="chart-container">
+                    <div class="chart-header">Rutas Más Utilizadas</div>
+                    <div id="popularRoutes" style="height: 300px;"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="chart-container">
+                    <div class="chart-header">Tipos de Usuarios</div>
+                    <div id="userTypes" style="height: 300px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tab-pane fade" id="financial" role="tabpanel">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="chart-container">
+                    <div class="chart-header">Ingresos Mensuales</div>
+                    <div id="revenueChart" style="height: 350px;"></div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="chart-container">
+                    <div class="chart-header">Distribución de Gastos</div>
+                    <div id="expensesChart" style="height: 350px;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="table-container mt-4">
+            <div class="table-header">
+                <h3 class="table-title">Resumen Financiero Anual</h3>
+                <button class="btn btn-outline-primary">Exportar a Excel</button>
+            </div>
+            
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Mes</th>
+                        <th>Ingresos</th>
+                        <th>Gastos</th>
+                        <th>Utilidad</th>
+                        <th>Crecimiento</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Enero</td>
+                        <td>$1,250,000</td>
+                        <td>$850,000</td>
+                        <td>$400,000</td>
+                        <td><span class="badge bg-success">+8.5%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Febrero</td>
+                        <td>$1,320,000</td>
+                        <td>$890,000</td>
+                        <td>$430,000</td>
+                        <td><span class="badge bg-success">+7.5%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Marzo</td>
+                        <td>$1,450,000</td>
+                        <td>$910,000</td>
+                        <td>$540,000</td>
+                        <td><span class="badge bg-success">+12.1%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Abril</td>
+                        <td>$1,380,000</td>
+                        <td>$920,000</td>
+                        <td>$460,000</td>
+                        <td><span class="badge bg-warning">+2.3%</span></td>
+                    </tr>
+                    <tr>
+                        <td>Mayo</td>
+                        <td>$1,520,000</td>
+                        <td>$930,000</td>
+                        <td>$590,000</td>
+                        <td><span class="badge bg-success">+15.8%</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+    <div class="tab-pane fade" id="performance" role="tabpanel">
+        <div class="row">
+            <div class="col-md-8">
+                <div class="chart-container">
+                    <div class="chart-header">Rendimiento de Rutas</div>
+                    <div id="routePerformance" style="height: 400px;"></div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="chart-container">
+                    <div class="chart-header">Indicadores Clave</div>
+                    <div class="dashboard-grid mt-3">
+                        <div class="dashboard-card">
+                            <div class="card-value">94.7%</div>
+                            <div class="card-title">Puntualidad</div>
+                            <div class="card-description">Rutas que cumplen con horarios</div>
+                        </div>
+                        <div class="dashboard-card">
+                            <div class="card-value">8.2 min</div>
+                            <div class="card-title">Tiempo de Espera Promedio</div>
+                            <div class="card-description">En estaciones principales</div>
+                        </div>
+                        <div class="dashboard-card">
+                            <div class="card-value">4.7 / 5</div>
+                            <div class="card-title">Satisfacción del Usuario</div>
+                            <div class="card-description">Basado en encuestas</div>
+                        </div>
+                        <div class="dashboard-card">
+                            <div class="card-value">98.3%</div>
+                            <div class="card-title">Disponibilidad</div>
+                            <div class="card-description">Sistema operativo</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="tab-pane fade" id="custom" role="tabpanel">
+        <div class="form-container">
+            <h3 class="form-title">Generar Reporte Personalizado</h3>
+            <form>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Tipo de Reporte</label>
+                        <select class="form-select">
+                            <option>Uso del sistema</option>
+                            <option>Financiero</option>
+                            <option>Rendimiento</option>
+                            <option>Mantenimiento</option>
+                            <option>Incidentes</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Periodo</label>
+                        <select class="form-select">
+                            <option>Diario</option>
+                            <option>Semanal</option>
+                            <option>Mensual</option>
+                            <option>Trimestral</option>
+                            <option>Anual</option>
+                            <option>Personalizado</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="row mb-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Fecha Inicio</label>
+                        <input type="date" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Fecha Fin</label>
+                        <input type="date" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Filtros Adicionales</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="filter1">
+                        <label class="form-check-label" for="filter1">Solo rutas activas</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="filter2">
+                        <label class="form-check-label" for="filter2">Incluir datos históricos</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="filter3">
+                        <label class="form-check-label" for="filter3">Comparar con periodo anterior</label>
+                    </div>
+                </div>
+                
+                <div class="mb-3">
+                    <label class="form-label">Formato de Salida</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="format" id="pdf" checked>
+                        <label class="form-check-label" for="pdf">PDF</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="format" id="excel">
+                        <label class="form-check-label" for="excel">Excel</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="format" id="html">
+                        <label class="form-check-label" for="html">HTML</label>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary w-100">Generar Reporte</button>
+            </form>
+        </div>
+    </div>
+</div>

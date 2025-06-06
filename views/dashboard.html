@@ -1,0 +1,126 @@
+<!-- dashboard.html -->
+<div class="page-header">
+    <h1>Panel de Control</h1>
+</div>
+
+<div class="dashboard-grid">
+    <div class="dashboard-card">
+        <div class="card-header">
+            <div class="card-icon">
+                <i class="fas fa-bus"></i>
+            </div>
+            <div class="card-title">Rutas Activas</div>
+        </div>
+        <div class="card-value">114</div>
+        <div class="card-description">Rutas de transporte actualmente en operación</div>
+    </div>
+    
+    <div class="dashboard-card">
+        <div class="card-header">
+            <div class="card-icon">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="card-title">Estaciones</div>
+        </div>
+        <div class="card-value">148</div>
+        <div class="card-description">Puntos de acceso en todo el sistema</div>
+    </div>
+    
+    <div class="dashboard-card">
+        <div class="card-header">
+            <div class="card-icon">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="card-title">Usuarios Diarios</div>
+        </div>
+        <div class="card-value">2.4M</div>
+        <div class="card-description">Personas que utilizan el sistema diariamente</div>
+    </div>
+    
+    <div class="dashboard-card">
+        <div class="card-header">
+            <div class="card-icon">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="card-title">Crecimiento</div>
+        </div>
+        <div class="card-value">+12.5%</div>
+        <div class="card-description">Aumento en usuarios este mes</div>
+    </div>
+</div>
+
+<div class="dashboard-charts">
+    <div class="chart-container">
+        <div class="chart-header">Uso de Rutas en Tiempo Real</div>
+        <div id="dashboardUsageChart" style="height: 300px;"></div>
+    </div>
+    
+    <div class="chart-container">
+        <div class="chart-header">Distribución de Rutas</div>
+        <div id="routeDistribution" style="height: 300px;"></div>
+    </div>
+</div>
+
+<div class="table-container">
+    <div class="table-header">
+        <h3 class="table-title">Últimas Actividades</h3>
+        <button class="btn btn-outline-primary">Ver Todas</button>
+    </div>
+    
+    <table class="dashboard-table">
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Acción</th>
+                <th>Fecha</th>
+                <th>Estado</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>admin@transmi.com</td>
+                <td>Actualizó la ruta Calle 26</td>
+                <td>2023-11-15 14:30</td>
+                <td><span class="badge bg-success">Completado</span></td>
+            </tr>
+            <tr>
+                <td>operador@transmi.com</td>
+                <td>Agregó nueva estación</td>
+                <td>2023-11-15 12:45</td>
+                <td><span class="badge bg-success">Completado</span></td>
+            </tr>
+            <tr>
+                <td>admin@transmi.com</td>
+                <td>Eliminó usuario inactivo</td>
+                <td>2023-11-14 16:20</td>
+                <td><span class="badge bg-danger">Revertido</span></td>
+            </tr>
+            <tr>
+                <td>reportes@transmi.com</td>
+                <td>Generó reporte mensual</td>
+                <td>2023-11-14 10:15</td>
+                <td><span class="badge bg-success">Completado</span></td>
+            </tr>
+            <tr>
+                <td>admin@transmi.com</td>
+                <td>Actualizó configuración del sistema</td>
+                <td>2023-11-13 09:30</td>
+                <td><span class="badge bg-warning">Pendiente</span></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="dashboard-pagination">
+        <ul class="pagination">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1">Anterior</a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Siguiente</a>
+            </li>
+        </ul>
+    </div>
+</div>
