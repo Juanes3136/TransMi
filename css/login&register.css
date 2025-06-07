@@ -405,3 +405,19 @@ a:hover {
         left: 20px;
     }
 }
+
+.error-message {
+    color: #c41d14;
+    font-size: 12px;
+    margin-top: 5px;
+    display: none;
+    text-align: left;
+}
+
+.input-group.error input {
+    border-bottom-color: #c41d14;
+}
+
+.input-group.error .input-icon {
+    color: #c41d14;
+}
