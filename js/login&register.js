@@ -119,16 +119,17 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
     const user = users.find(u => u.email === email && u.password === password);
     
     if (user) {
-        // Guardar en sessionStorage
-        sessionStorage.setItem('currentUser', JSON.stringify(user));
+        sessionStorage.setItem('currentUser', JSON.stringify({
+            name: user.name,
+            last_name: user.last_name,
+            email: user.email,
+            role: 'Usuario' // Puedes agregar más campos según necesites
+        }));
         
-        errorMessage.style.display = 'none';
-        
-        // Redirigir a base.html después de 1 segundo
+        // Redirigir
         setTimeout(() => {
             window.location.href = 'base.html';
         }, 1000);
-        
     } else {
         errorMessage.style.display = 'block';
     }

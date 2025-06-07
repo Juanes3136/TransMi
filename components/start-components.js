@@ -12,6 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // Cargar modales
             loadModals();
+
+            // Actualizar nombre del usuario
+            updateUserInfo();
         });
 });
 

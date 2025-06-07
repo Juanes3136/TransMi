@@ -19,6 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         }, 1000);
                     });
                 }
+                // Actualizar información del usuario
+                updateUserInfo();
             }, 100);
         });
 });
