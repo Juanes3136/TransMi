@@ -1,0 +1,7 @@
+[
+    { "id": 1, "name": "Calle 26", "stations": 18, "length": 24.5, "status": "active" },
+    { "id": 2, "name": "Autonorte", "stations": 22, "length": 32.1, "status": "active" },
+    { "id": 3, "name": "Caracas", "stations": 25, "length": 29.8, "status": "maintenance" },
+    { "id": 4, "name": "Suba", "stations": 16, "length": 18.7, "status": "active" },
+    { "id": 5, "name": "NQS", "stations": 20, "length": 26.3, "status": "active" }
+]

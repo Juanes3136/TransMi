@@ -87,14 +87,21 @@ function initDashboardPagination() {
     });
 }
 
-// Inicializar el dashboard cuando el DOM esté listo
+// Inicializar el dashboard cuando el DOM esté listo.
 document.addEventListener('DOMContentLoaded', function() {
-    initDashboardCharts();
-    initDashboardPagination();
+    // Check if already initialized by a rapidly completed DOM load,
+    // to prevent running initialization logic twice.
+    if (!document.dashboardInitialized) {
+        initDashboardCharts();
+        initDashboardPagination();
+        document.dashboardInitialized = true;
+    }
 });
 
-// También inicializar si el script se carga después del DOM
-if (document.readyState === 'complete') {
+// Fallback for scripts that might execute after DOMContentLoaded has already fired
+// (e.g., if the script is loaded dynamically or async) or if DOMContentLoaded was missed.
+if (document.readyState === 'complete' && !document.dashboardInitialized) {
     initDashboardCharts();
     initDashboardPagination();
+    document.dashboardInitialized = true;
 }

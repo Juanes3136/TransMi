@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    fetch('layouts/sidebar.html')
+    fetch('views/layouts/sidebar.html')
         .then(response => response.text())
         .then(html => {
             document.getElementById('sidebar-container').innerHTML = html;
@@ -12,15 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     logoutBtn.addEventListener('click', function(e) {
                         e.preventDefault();
                         showLoadingOverlay();
-                        
-                        // Redirigir después de 1 segundo
-                        setTimeout(() => {
-                            window.location.href = '../index.html';
-                        }, 1000);
+                        // Redirect immediately after showing overlay (or any other cleanup).
+                        window.location.href = '../index.html';
                     });
                 }
-                // Actualizar información del usuario
+                // Actualizar información del usuario.
                 updateUserInfo();
-            }, 100);
+            }, 100); // Keep a small delay for sidebar elements to render before attaching event listeners.
         });
 });
